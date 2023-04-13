@@ -73,5 +73,4 @@ export const DirectoryItemContainer = styled.div`
       opacity: 0.9;
     }
   }
-
 `;

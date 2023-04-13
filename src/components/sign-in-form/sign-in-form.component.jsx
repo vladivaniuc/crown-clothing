@@ -8,7 +8,6 @@ import {
 import { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import { ButtonsContainer, SignInContainer } from "./sign-in-form.styles.jsx";
 
-
 const defaultFormFields = {
   email: "",
   password: "",
@@ -29,10 +28,7 @@ const SignInForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await signInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
+      await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
     } catch (error) {
       switch (error.code) {

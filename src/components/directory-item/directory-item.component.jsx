@@ -3,7 +3,8 @@ import "./directory-item.styles.jsx";
 import {
   DirectoryItemContainer,
   BackgroundImage,
-  Body} from "./directory-item.styles.jsx";
+  Body,
+} from "./directory-item.styles.jsx";
 
 const DirectoryItem = ({ category }) => {
   const { imageUrl, title, route } = category;
@@ -16,7 +17,7 @@ const DirectoryItem = ({ category }) => {
       <Body>
         <h2>{title}</h2>
         <p>Shop now</p>
-       </Body>
+      </Body>
     </DirectoryItemContainer>
   );
 };
