@@ -40,8 +40,10 @@ googleProvider.setCustomParameters({
 });
 
 export const auth = getAuth();
+
 export const signInWithGooglePopup = () =>
   signInWithPopup(auth, googleProvider);
+
 export const signInWithGoogleRedirect = () =>
   signInWithRedirect(auth, googleProvider);
 
@@ -66,14 +68,11 @@ export const addCollectionAndDocuments = async (
 export const getCategoriesAndDocuments = async () => {
   const collectionRef = collection(db, "categories");
   const q = query(collectionRef);
+  
+  await Promise.reject(new Error('new Error woops'));
 
   const querySnapshot = await getDocs(q);
-  const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
-    const { title, items } = docSnapshot.data();
-    acc[title.toLowerCase()] = items;
-    return acc;
-  }, {});
-  return categoryMap;
+  return querySnapshot.docs.map((docsSnapshot) => docsSnapshot.data());
 };
 
 export const createUserDocumentFromAuth = async (
@@ -113,7 +112,7 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
   return await signInWithEmailAndPassword(auth, email, password);
 };
 
-export const signOutUser = () => signOut(auth);
+export const signOutUser = async () => await signOut(auth);
 
-export const onAuthStateChangeLister = (callback) =>
+export const onAuthStateChangeListener = (callback) =>
   onAuthStateChanged(auth, callback);
