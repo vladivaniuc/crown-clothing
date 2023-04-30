@@ -14,9 +14,11 @@ import Shop from "./components/routes/shop/shop.component.jsx";
 import Checkout from "./components/routes/checkout/checkout.component.jsx";
 
 import { setCurrentUser } from "./store/user/user.action";
+import { MyTest } from "./components/tget/tget";
 
 const App = () => {
   const dispatch = useDispatch();
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChangeListener((user) => {
       if (user) {
@@ -28,6 +30,7 @@ const App = () => {
   }, [dispatch]);
 
   return (
+ /*    <MyTest/> */
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
