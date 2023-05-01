@@ -12,9 +12,7 @@ import Spinner from "../../spinner/spinner.component";
 
 const Category = () => {
   const { category } = useParams();
-  console.log("category is", category);
   const categoriesMap = useSelector(selectCategoriesMap);
-  console.log("category map inside category is ", categoriesMap["hats"]);
   const isLoading = useSelector(selectCategoriesIsLoading);
   const [products, setProducts] = useState(categoriesMap[category]);
 
