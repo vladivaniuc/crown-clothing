@@ -22,7 +22,7 @@ import { selectIsCartOpen } from "../../../store/cart/cart.selector";
 const Navigation = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector(selectCurrentUser);
-  const { isCartOpen } = useSelector(selectIsCartOpen);
+  const isCartOpen = useSelector(selectIsCartOpen);
   const signOutUser = () => dispatch(signOutStart());
 
   return (

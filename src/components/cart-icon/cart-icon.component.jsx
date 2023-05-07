@@ -13,7 +13,6 @@ import {
 
 const CartIcon = () => {
   const dispatch = useDispatch();
-
   const cartCount = useSelector(selectCartCount);
   const isCartOpen = useSelector(selectIsCartOpen);
 
